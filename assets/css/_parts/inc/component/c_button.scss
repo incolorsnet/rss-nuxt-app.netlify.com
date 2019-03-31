@@ -1,0 +1,213 @@
+.c_basic_button {
+  border: 1px solid $palet2_dark;
+  border-radius: $border_radius;
+  transition: all $transition_sec ease;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.6;
+  padding: rem(10) rem(15) rem(8);
+  background: #fff;
+
+  // サイズの種類
+  &-fit {
+    width: 100%;
+    display: block;
+  }
+
+  // XS
+  &-tiny {
+    padding: rem(3) rem(20);
+  }
+
+  // S
+  &-small {
+    padding: rem(6) rem(25);
+  }
+
+  // L
+  &-large {}
+
+  // XL
+  &-huge {}
+
+  // マウスオーバー - ベース
+  &.tap {
+    background: $palet2_dark;
+  }
+
+  &.tap &-text {
+    color: #fff;
+  }
+
+  // マウスオーバー - 矢印
+  &.tap &-arrow-r {
+    transform: translateX(0);
+
+    .-arr {
+      border-color: #fff;
+    }
+  }
+  &.tap &-arrow-l {
+    transform: translateX(0);
+
+    .-arr {
+      border-color: #fff;
+    }
+  }
+
+  // テキスト
+  &-text {
+    @include fo_google2();
+    letter-spacing: $ltsp;
+    transition: all $transition_sec ease;
+    font-weight: bold;
+    line-height: 1.7;
+  }
+
+  // 矢印 - 個別スタイル
+  &-arrow-t {
+    width: rem(10);
+    height: rem(10);
+    display: block;
+    right: rem(10);
+    transition: all $transition_sec ease;
+  }
+  &-arrow-r {
+    width: rem(10);
+    height: rem(10);
+    display: block;
+    right: rem(10);
+    transform: translateX(-4px);
+    transition: all $transition_sec ease;
+  }
+  &-arrow-l {
+    width: rem(10);
+    height: rem(10);
+    display: block;
+    left: rem(10);
+    transform: translateX(4px);
+    transition: all $transition_sec ease;
+  }
+  &-arrow-b {
+    width: rem(10);
+    height: rem(10);
+    display: block;
+    right: rem(10);
+    transition: all $transition_sec ease;
+  }
+
+  // 矢印 - 共通スタイル
+  &-arrow-t,
+  &-arrow-r,
+  &-arrow-b,
+  &-arrow-l {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transition: all .2s linear;
+
+    &-inner {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: inline-block;
+      border-style: solid;
+      border-width: 1px 1px 0 0;
+    }
+  }
+
+  // 色反転
+  &-reverse {
+    background: $palet2_dark;
+
+    // 色反転
+    &.tap {
+      background: #fff;
+    }
+
+    .c_basic_button-text {
+      color: #fff;
+    }
+
+    &.tap .c_basic_button-text {
+      color: $palet2;
+    }
+
+    &.tap .c_basic_button-arrow-r {
+      .-arr {
+        border-color: $palet2_dark;
+      }
+    }
+
+    &.tap .c_basic_button-arrow-l {
+      .-arr {
+        border-color: $palet2_dark;
+      }
+    }
+  }
+}
+
+.c_arrow_base {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-width: 2px 2px 0 0;
+  transition: all $transition_sec ease;
+}
+
+.c_arrow_img {
+  width: rem(9);
+  height: rem(18);
+  display: inline-block;
+  vertical-align: middle;
+  transition: all .3s ease;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+}
+
+.c_slideToggle-btn {
+  @include sp {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    .-arrow {
+      @include sp {
+        width: rem(12);
+        height: rem(12);
+        display: block;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        right: rem(15);
+
+        &-inner {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          color: #fff;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

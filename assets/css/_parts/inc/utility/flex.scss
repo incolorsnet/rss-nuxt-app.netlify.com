@@ -1,0 +1,41 @@
+.u_col-reverse {
+  @include mq_style {
+    flex-direction: row-reverse;
+  }
+}
+
+.u_col-jc-sb {
+  @include mq_style {
+    justify-content: space-between;
+  }
+}
+
+.u_col-jc-c {
+  @include mq_style {
+    justify-content: center;
+  }
+}
+
+.u_col-jc-r {
+  @include mq_style {
+    justify-content: flex-end;
+  }
+}
+
+.u_col-ai-c {
+  @include mq_style {
+    align-items: center;
+  }
+}
+
+.u_col-ai-b {
+  @include mq_style {
+    align-items: flex-end;
+  }
+}
+
+.u_col-wrap {
+  @include mq_style {
+    flex-wrap: wrap;
+  }
+}

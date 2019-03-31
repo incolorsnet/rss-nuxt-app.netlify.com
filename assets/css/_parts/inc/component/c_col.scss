@@ -1,0 +1,13 @@
+.c_col {
+  @include mq_style() {
+    display: flex;
+  }
+}
+
+.c_col-c {
+  @include mq_style() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

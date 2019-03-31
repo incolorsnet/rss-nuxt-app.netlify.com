@@ -1,0 +1,52 @@
+@import "inc/component/c_inner";
+@import "inc/component/c_heading";
+@import "inc/component/c_button";
+@import "inc/component/c_arr";
+@import "inc/component/c_col";
+
+.c_text {
+  &, p {
+    font-size: rem(14);
+    line-height: (48/28);
+    word-wrap: break-word;
+
+    &.p, p {
+      margin: 0 0 rem(14);
+    }
+
+    &.p:last-child, p:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.c_no_image {
+  @include bg();
+  width: 100%;
+  display: block;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  text-align: center;
+
+  &-text {
+    @include fo_google();
+    color: #fff;
+    font-size: rem(14);
+    font-weight: 700;
+    letter-spacing: $ltsp;
+    width: 100%;
+    display: block;
+    height: 1em;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+  }
+}

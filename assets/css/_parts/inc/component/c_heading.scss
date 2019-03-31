@@ -1,0 +1,92 @@
+.c_heading1 {
+  text-align: center;
+  &-icn {
+    @include sp {
+      width: rem(40);
+    }
+    width: rem(50);
+    display: inline-block;
+    line-height: 0;
+  }
+  &-text {
+    @include pc {
+      font-size: rem(34,2);
+      margin: rem(15) 0 0;
+    }
+    @include fo_google();
+    font-size: rem(14);
+    margin: rem(12) 0 0;
+    letter-spacing: $ltsp;
+    font-weight: bold;
+    font-feature-settings: "palt";
+    display: block;
+  }
+}
+
+.c_heading2 {
+  @include pc {
+    padding: rem(23) 0;
+  }
+  @include bg();
+  padding: rem(15) 0;
+  text-align: center;
+
+  &-text {
+    @include fo_google();
+    color: #fff;
+    font-size: rem(15);
+    letter-spacing: $ltsp;
+    font-weight: 800;
+  }
+}
+
+.c_heading_icn {
+
+  @include mq_style() {
+    text-align: center;
+
+    &-icn {
+      width: rem(45);
+      margin: 0 0 rem(6);
+      display: inline-block;
+      line-height: 1;
+    }
+
+    &-text {
+      @include fo_google();
+      font-size: rem(15);
+      font-weight: 800;
+      letter-spacing: $ltsp;
+      display: block;
+      font-weight: bold;
+    }
+  }
+
+  &-vw {
+    @include mq_style() {
+      text-align: center;
+
+      &-icn {
+        @include pc_min {
+          width: vw(90,2400);
+          margin: 0 0 vw(20,2400);
+        }
+        width: rem(45);
+        margin: 0 0 rem(10);
+        display: inline-block;
+        line-height: 1;
+      }
+
+      &-text {
+        @include pc_min {
+          font-size: vw(30,2400);
+        }
+        @include fo_google();
+        font-size: rem(15);
+        font-weight: 800;
+        letter-spacing: $ltsp;
+        display: block;
+      }
+    }
+  }
+}

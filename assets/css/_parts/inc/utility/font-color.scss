@@ -1,0 +1,23 @@
+.u_palet-fc-fff {
+  @include mq_style {
+    color: #fff;
+  }
+}
+
+.u_palet-fc1 {
+  @include mq_style {
+    color: $palet1;
+  }
+}
+
+.u_palet-fc2 {
+  @include mq_style {
+    color: $palet2;
+  }
+}
+
+.u_palet-fc3 {
+  @include mq_style {
+    color: $palet3;
+  }
+}

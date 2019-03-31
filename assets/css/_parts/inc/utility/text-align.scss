@@ -1,0 +1,17 @@
+.u_txt-l {
+  @include mq_style {
+    text-align: left;
+  }
+}
+
+.u_txt-c {
+  @include mq_style {
+    text-align: center;
+  }
+}
+
+.u_txt-r {
+  @include mq_style {
+    text-align: right;
+  }
+}

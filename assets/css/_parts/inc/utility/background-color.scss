@@ -1,0 +1,35 @@
+.u_palet-bg-000 {
+  @include mq_style() {
+    background: #000;
+  }
+
+  &-lite {
+    @include mq_style() {
+      background: #f2f3f5;
+    }
+  }
+}
+
+.u_palet-bg-fff {
+  @include mq_style() {
+    background: #fff;
+  }
+}
+
+.u_palet-bg1 {
+  @include mq_style() {
+    background: $palet1;
+  }
+}
+
+.u_palet-bg2 {
+  @include mq_style() {
+    background: $palet2;
+  }
+}
+
+.u_palet-bg3 {
+  @include mq_style() {
+    background: $palet3;
+  }
+}

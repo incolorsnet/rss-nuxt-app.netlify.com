@@ -1,0 +1,163 @@
+// ブレークポイント
+@mixin mq_max($wid) {
+  @media only screen and (max-width: #{$wid}#{px}) {
+    @content;
+  }
+}
+@mixin mq_min($wid) {
+  @media only screen and (min-width: #{$wid}#{px}) {
+    @content;
+  }
+}
+@mixin mq_pc_sb {
+  @media only screen and (min-width: #{$min_l}#{px}) and (max-width: #{$max_l}#{px}) {
+    @content;
+  }
+}
+
+@mixin pc_min {
+  @media only screen and (min-width: #{$min_l}#{px}) {
+    @content;
+  }
+}
+
+@mixin pc_max {
+  @media only screen and (min-width: #{$max_l}#{px}) {
+    @content;
+  }
+}
+
+@mixin sp_max {
+  @media only screen and (max-width: #{$min_s}#{px}) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media only screen and (min-width: #{$bp_l}#{px}) {
+    @content;
+  }
+}
+@mixin sp {
+  @media only screen and (max-width: #{$bp_m}#{px}) {
+    @content;
+  }
+}
+
+@mixin mq_style($pc: #{$bp_l}, $sp: #{bp_s}) {
+  @content;
+
+  @if $pc != false {
+    &-pc {
+      @include pc {
+        @content;
+      }
+    }
+  }
+
+  @if $sp != false {
+    @include sp {
+      &-sp {
+        @content;
+      }
+    }
+  }
+}
+
+// clearfix
+@mixin cf {
+  content: "";
+  clear: both;
+  height: 0;
+  visibility: hidden;
+  display: block;
+}
+
+// calc
+@function cal($a, $b) {
+  @return $a / $b * 100%;
+}
+
+// rem
+@function rem($a, $b: 1, $shrink: false) {
+  @if $shrink == false {
+    @return $a / $b / $rem * 1rem;
+  } @else if $shrink == 'pc' {
+    @return $a / $b / $rem * $shrink_from_design_pc * 1rem;
+  } @else if $shrink == 'pcmax' {
+    @return $a / $b / $rem * $shrink_from_design_pc_max * 1rem;
+  } @else if $shrink == 'spmax' {
+    @return $a / $b / $rem * $shrink_from_design_pc_max * 1rem;
+  }
+}
+
+// px
+@function px($a, $dev: 'sp') {
+  @if $dev == 'sp' {
+    @return round($a / 3 * 1px);
+  }
+  @else {
+    @return round($a / 2 * 1px);
+  }
+}
+
+// vw
+@function vw($a, $b) {
+  @return ( $a / $b ) * 100vw;
+}
+
+// c_inner
+@mixin inner($size) {
+  margin: 0 auto;
+  @if ( $size == "l" ) {
+    width: cal(2048,2300);
+    min-width: $min_l#{px};
+    max-width: $max_l#{px};
+    padding: 0 35px;
+  } @else if ( $size == "s" ) {
+    width: 100%;
+    min-width: $min_s#{px};
+    padding: 0 15px;
+  }
+}
+
+@mixin bg($vertical: 'false', $from: $palet1, $to: $palet2) {
+  @if ($vertical == 'true') {
+    background-image: linear-gradient(to bottom, rgba($from, 1), rgba($to, 1), rgba($from, 1), rgba($to, 1));
+    background-size: 400% 400%;
+   } @else {
+    background-image: linear-gradient(to right, rgba($from, 1), rgba($to, 1), rgba($from, 1), rgba($to, 1));
+    background-size: 400% 400%;
+   }
+  // transition: background-position .3s ease;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 51%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 51%;
+  }
+}
+
+@mixin txtgr($from: $palet1, $to: $palet2) {
+  background-image: linear-gradient(to right, rgba($from, 1), rgba($to, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin hover () {
+  opacity: .7;
+}
+
+@mixin hover_arr () {
+  transform: translateX(3px);
+}
+
+@mixin box_shadow($opacity: .2) {
+  box-shadow: 0 0 30px rgba(#000, $opacity);
+}

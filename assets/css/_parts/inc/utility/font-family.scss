@@ -1,0 +1,15 @@
+.u_ff-kakugo {
+  @include fo-kakugo;
+}
+
+.u_ff-yugo {
+  @include fo-yugo;
+}
+
+.u_ff-yumin {
+  @include fo-yumin;
+}
+
+.u_ff-g {
+  @include fo_google();
+}

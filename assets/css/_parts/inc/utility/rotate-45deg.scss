@@ -1,0 +1,23 @@
+.u_rotate-45-r {
+  @include mq_style {
+    transform: rotate(45deg);
+  }
+}
+
+.u_rotate-45-b {
+  @include mq_style {
+    transform: rotate(135deg);
+  }
+}
+
+.u_rotate-45-l {
+  @include mq_style {
+    transform: rotate(-135deg);
+  }
+}
+
+.u_rotate-45-t {
+  @include mq_style {
+    transform: rotate(-45deg);
+  }
+}

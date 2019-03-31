@@ -1,0 +1,49 @@
+.u_ib {
+  display: inline-block;
+
+  &-sp {
+    @include sp {
+      display: inline-block;
+    }
+    @include pc {
+      display: none;
+    }
+  }
+
+  &-pc {
+    @include sp {
+      display: none;
+    }
+    @include pc {
+      display: inline-block;
+    }
+  }
+}
+
+.u_bl {
+  display: block;
+
+  &-sp {
+    @include sp {
+      display: block;
+    }
+    @include pc {
+      display: none;
+    }
+  }
+
+  &-pc {
+    @include sp {
+      display: none;
+    }
+    @include pc {
+      display: block;
+    }
+  }
+}
+
+.u_none {
+  @include mq_style {
+    display: none;
+  }
+}

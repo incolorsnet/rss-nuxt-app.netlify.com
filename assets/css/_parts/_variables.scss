@@ -1,0 +1,149 @@
+// PC: パソコン, TB: タブレット, SP: スマートフォン
+$max_l: 1680;
+$max_m: 480 - 30;
+$max_s: 414;
+
+$min_l: 1024;
+$min_s: 375;
+$min_l_navi: 1150;
+$rem: 14;
+$fs: 1 / $rem * 1rem;
+
+// ブレークポイント - max-widthの値で指定
+// $bp-s: 719;
+$bp_m: 768;
+$bp_l: $bp_m + 1;
+
+// 1024 / 1200 = デザインデータから実装サイズの最小値を出す
+$shrink_from_design_pc: ($min_l / 1200);
+$shrink_from_design_pc_max: ($max_l / 1200);
+$shrink_from_design_sp_max: ($max_s / 1200);
+
+// カラー
+$palet1: #f3f3f3;
+$palet2: #2dc7ac;
+  $palet2_dark: #00b796;
+$palet3: #fff;
+$palet_red: #ea565b;
+$palet_border: #e1e1e1;
+
+$palet_tw: #1DA1F2;
+$palet_fb: #3b5998;
+$palet_line: #00C300;
+$palet_hatena: #008fde;
+$palet_note: #2dcdb5;
+$palet_pixiv: #0096DB;
+$palet_fantia: #ff5899;
+
+
+// フォント
+$color: #404040;
+$bg: false;
+$a: $palet2_dark;
+$hover: $palet2_dark;
+$hover_opacity: .5;
+
+$fo_yugo: true;
+$fo_webfont: false;
+$fo_webfont2: $fo_webfont;
+$fo_google1: "Montserrat", sans-serif;
+$fo_google2: "PT Sans Narrow", sans-serif;
+$fo_google3: false;
+
+// デザイン上の width
+$dsw_s: 1242;
+$dsw_l: 2800;
+
+// border-radius
+$border_radius: 4px;
+
+// letter-spacing
+$ltsp: 0.2em;
+$ltsp2: 0.05em;
+
+// hover
+$hover_scale: 1.03;
+$hover_scale_transition: 0.2s;
+
+$transition_sec: 0.4s;
+
+@if $fo_webfont != false {
+  @font-face  {
+    font-family: $fo_webfont;
+    src: url("~assets/font/#{$fo_webfont}.woff") format("woff"), url("~assets/font/#{$fo_webfont}.woff2") format("woff2");
+  }
+}
+
+@if $fo_webfont2 != false {
+  @font-face  {
+    font-family: $fo_webfont;
+    src: url("~assets/font/#{$fo_webfont}.woff") format("woff"), url("~assets/font/#{$fo_webfont}.woff2") format("woff2");
+  }
+}
+
+@if $fo_yugo == true {
+  @font-face  {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Medium");
+    font-weight: 100;
+  }
+  @font-face  {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Medium");
+    font-weight: 200;
+  }
+  @font-face  {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Medium");
+    font-weight: 300;
+  }
+  @font-face  {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Medium");
+    font-weight: 400;
+  }
+}
+
+// font-family
+@mixin fo_kakugo() {
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ ゴシック", "MS Gothic", sans-serif;
+}
+
+@mixin fo_yugo() {
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, Hiragino Kaku Gothic ProN, Meiryo, sans-serif;
+  // font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif
+}
+
+@mixin fo_device() {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, Hiragino Kaku Gothic ProN, Meiryo, sans-serif;
+}
+
+@mixin fo_yumin() {
+  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+}
+
+@mixin fo_cus() {
+  font-family: "#{$fo_webfont}", sans-serif;
+}
+
+@mixin fo_cus2() {
+  font-family: "#{$fo_webfont2}", sans-serif;
+}
+
+@mixin fo_google() {
+  font-family: #{$fo_google1};
+}
+@mixin fo_google2() {
+  font-family: #{$fo_google2};
+}
+@mixin fo_google3() {
+  font-family: #{$fo_google3};
+}
+
+@mixin fo_def () {
+  @if $fo_yugo {
+    @include fo_yugo();
+  } @else {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, Hiragino Kaku Gothic ProN, Meiryo, sans-serif;
+  }
+}

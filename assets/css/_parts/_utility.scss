@@ -1,0 +1,61 @@
+@import "variables";
+@import "function";
+
+@import "inc/utility/font-family";
+@import "inc/utility/display";
+@import "inc/utility/flex";
+@import "inc/utility/text-align";
+@import "inc/utility/rotate-45deg";
+@import "inc/utility/background-color";
+@import "inc/utility/font-color";
+@import "inc/utility/fill";
+
+.u_fw-b {
+  font-weight: bold;
+}
+
+.u_fw-bb {
+  font-weight: bold;
+}
+
+.u_pos-rel {
+  &-sp {
+    @include sp {
+      position: relative;
+    }
+  }
+  &-pc {
+    @include pc {
+      position: relative;
+    }
+  }
+  position: relative;
+}
+
+.u_pos-abs {
+  &-sp {
+    @include sp {
+      position: absolute;
+    }
+  }
+  &-pc {
+    @include pc {
+      position: absolute;
+    }
+  }
+  position: absolute;
+}
+
+.u_bv {
+  backface-visibility: hidden;
+}
+
+.u_z-index-1 {
+  z-index: 1;
+}
+
+.u_bshadow {
+  @include pc {
+    @include box_shadow();
+  }
+}
