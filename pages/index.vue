@@ -1,6 +1,12 @@
 <template lang="pug">
 section.p_note_mu(v-if="$store.state.jsonData[0]")
   .c_inner
+    .p_github
+      ul.p_github-list.c_col.u_col-jc-r
+        li.p_github-item
+          a(href="https://github.com/incolorsnet/rss-nuxt-app.netlify.com", target="_blank", rel="noopener noreferrer") ソースコードはこちら (GitHub)
+        li.p_github-item
+          a(href="", target="_blank", rel="noopener noreferrer") コードの詳細を書いた記事はこちら (note)
     .p_note_mu-header._fade.fade_in.scale
       h1.p_note_mu-heading
         span.-text note
@@ -44,8 +50,26 @@ export default {
 </script>
 
 <style lang="scss">
+.p_github {
+  padding: rem(10) 0 rem(50);
+
+  &-list {
+  }
+
+  &-item {
+    text-align: right;
+
+    a {
+      font-size: rem(12);
+      text-decoration: underline;
+      line-height: 2;
+      display: block;
+      padding: rem(10) rem(8);
+    }
+  }
+}
 .p_note_mu {
-  padding: rem(80) 0 rem(80);
+  padding: 0 0 rem(80);
 
   &-header {
   }
