@@ -6,7 +6,7 @@ section.p_note_mu(v-if="$store.state.jsonData[0]")
         li.p_github-item
           a(href="https://github.com/incolorsnet/rss-nuxt-app.netlify.com", target="_blank", rel="noopener noreferrer") ソースコードはこちら (GitHub)
         li.p_github-item
-          a(href="", target="_blank", rel="noopener noreferrer") コードの詳細を書いた記事はこちら (note)
+          a(href="https://note.mu/in_colors_net/n/nd00febead130", target="_blank", rel="noopener noreferrer") コードの詳細を書いた記事はこちら (note)
     .p_note_mu-header._fade.fade_in.scale
       h1.p_note_mu-heading
         span.-text note
