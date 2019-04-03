@@ -31,7 +31,6 @@ module.exports = {
    */
   plugins: [
     { src: '@/plugins/Vue2TouchEvents.js' },
-    { src: '@/plugins/moment.js', ssr: false }
   ],
 
   /*
@@ -42,6 +41,7 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
+    ['@nuxtjs/moment', ['ja']],
     '~/modules/api-build-json'
   ],
   styleResources: {

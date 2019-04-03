@@ -39,11 +39,10 @@ section.p_note_mu(v-if="$store.state.jsonData[0]")
 </template>
 
 <script>
-import moment from 'moment'
 export default {
   methods: {
     getTheDate(date) {
-      return moment(date).format('YYYY.MM.DD (ddd)')
+      return this.$moment(date).format('YYYY.MM.DD (ddd)')
     }
   }
 }
