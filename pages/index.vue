@@ -13,21 +13,22 @@ section.p_note_mu(v-if="$store.state.jsonData[0]")
         span.-small のくらさんの記事一覧
     .p_note_mu-body
       .p_note_mu-list.c_col.u_col-wrap
-        a.p_nt._fade.fade_in.scale(v-for="post, index in $store.state.jsonData[0].note.items",
+        a.p_nt._fade.fade_in.scale(v-for="(post, index) in $store.state.jsonData[0].note.items",
+          :key="index",
           :href="post.link[0]",
           target="_blank",
           v-touch:tap)
           article.p_nt-inner
             .p_nt-mv
-              img(:src="post.thumb[0]", :alt="post.title[0]", v-if="post.thumb")
+              img(v-if="post.thumb", :src="post.thumb[0]", :alt="post.title[0]")
               .no-image.c_col-c(v-else)
                 .no-image-text NO IMAGE
             .p_nt-body
               .p_nt-body-header
                 .p_nt-body-date
-                  p(v-html="getTheDate(post.pubDate[0])")
+                  p {{ getTheDate(post.pubDate[0]) }}
                 .p_nt-body-heading.c_col.u_col-ai-c
-                  h3.p_nt-body-heading-text(v-html="post.title[0]")
+                  h3.p_nt-body-heading-text {{ post.title[0] }}
               .p_nt-body-button.c_basic_button.c_basic_button-tiny.c_basic_button-reverse(v-touch:tap)
                 p.p_nt-body-button-text.c_basic_button-text 続きを読む
     .p_note_mu-footer._fade.fade_in.scale
